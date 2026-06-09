@@ -1,0 +1,6 @@
+{
+  "name": "Mi Mundo por Dentro - Mariana Quintero",
+  "description": "Landing page oficial para el monólogo 'Mi mundo por dentro' de Mariana Quintero. Incluye ubicación, contacto de WhatsApp, eventos y un diseño tropical, divertido y erótico cargado de flow.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
