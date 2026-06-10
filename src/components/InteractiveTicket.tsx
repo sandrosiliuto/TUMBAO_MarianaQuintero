@@ -30,8 +30,8 @@ export default function InteractiveTicket() {
 
   const handleSendWhatsApp = () => {
     setIsSent(true);
-    const customMsg = `¡Hola! 💋 He generado mi invitación digital para el monólogo 'Mi mundo por dentro' de Mariana Quintero. Mi nombre es: *${userName}*. ¡Contad conmigo para el 19 de Junio! 👠🎙️`;
-    const whatsappUrl = `https://wa.me/e/${SHOW_DETAILS.whatsappNumber.replace('+', '')}?text=${encodeURIComponent(customMsg)}`;
+    const customMsg = `¡Hola! 💋 He generado mi invitación digital para Poesía y experiencias eróticamente divertidas 'Mi mundo por dentro' de Mariana Quintero. Mi nombre es: *${userName}*. ¡Contad conmigo para el 19 de Junio! 👠🎙️`;
+    const whatsappUrl = `https://wa.me/${SHOW_DETAILS.whatsappNumber.replace('+', '')}?text=${encodeURIComponent(customMsg)}`;
     
     // Open in new window safely
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');

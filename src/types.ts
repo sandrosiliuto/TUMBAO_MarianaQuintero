@@ -26,7 +26,7 @@ export interface LipstickShade {
 
 export const SHOW_DETAILS = {
   title: "MI MUNDO POR DENTRO",
-  subtitle: "¡El monólogo más divertido y picante del año!",
+  subtitle: "Poesía y experiencias eróticamente divertidas",
   performer: "Mariana Quintero",
   instagram: "https://www.instagram.com/__marianaquintero__?igsh=anN5eDk3cm0zbnJp",
   date: "19 de Junio",
@@ -35,7 +35,7 @@ export const SHOW_DETAILS = {
   address: "Av. José Miguel Galván Bello, El Médano, 38612 Granadilla de Abona, Tenerife, España",
   mapsLink: "https://maps.app.goo.gl/HxnLLFdqFcbQQ55TA",
   whatsappNumber: "+34666667542",
-  whatsappMessage: "¡Hola! 💋 Quisiera reservar o tener información sobre el monólogo y la sesión de DJ en 'Mi Mundo Por Dentro' del 19 de Junio.",
+  whatsappMessage: "¡Hola! 💋 Quisiera reservar o tener información sobre Poesía y experiencias eróticamente divertidas y la sesión de DJ en 'Mi Mundo Por Dentro' del 19 de Junio.",
   djName: "Sistah Vibes",
   djInstagram: "https://www.instagram.com/sistah_vibes?igsh=MWxiczIwZWE3NW9vYQ==",
   djTime: "22:00 h",

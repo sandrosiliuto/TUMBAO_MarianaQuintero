@@ -250,7 +250,7 @@ export default function App() {
                 <span className="animate-pulse text-[#ffb838]">🔴</span> EN VIVO · 20:00h a 22:00h 🎙️
               </div>
               
-              <p className="text-xs font-extrabold tracking-widest text-rose-400 uppercase">MONÓLOGAZO DE COMEDIA</p>
+              <p className="text-xs font-extrabold tracking-widest text-rose-400 uppercase">Poesía y experiencias eróticamente divertidas</p>
               
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white mt-1">
                 Con la carismática
@@ -451,7 +451,7 @@ export default function App() {
             <Footprints className="w-3.5 h-3.5 text-[#ff2d78]" /> MI MUNDO POR DENTRO <Flame className="w-3 h-3 text-[#ff2d78]" />
           </p>
           <p className="mt-1 leading-normal font-sans text-[10px]">
-            © {new Date().getFullYear()} Monólogo de Mariana Quintero. <br />
+            © {new Date().getFullYear()} Poesía y experiencias eróticamente divertidas de Mariana Quintero. <br />
             Entrada Libre hasta completar aforo. Se recomienda puntualidad.
           </p>
         </footer>

@@ -263,7 +263,7 @@ export default function SistahVibesBooth() {
           <button
             onClick={() => {
               // Custom WhatsApp message
-              const customWajoint = `¡Hola! 💋 Contad conmigo tanto para el monólogo 'Mi mundo por dentro' de Mariana Quintero como para la sesión de DJ de Sistah Vibes del 19 de Junio en El Médano, Tenerife. ✨👠🍹`;
+              const customWajoint = `¡Hola! 💋 Contad conmigo tanto para Poesía y experiencias eróticamente divertidas 'Mi mundo por dentro' de Mariana Quintero como para la sesión de DJ de Sistah Vibes del 19 de Junio en El Médano, Tenerife. ✨👠🍹`;
               const waUrl = `https://wa.me/${SHOW_DETAILS.whatsappNumber.replace('+', '')}?text=${encodeURIComponent(customWajoint)}`;
               window.open(waUrl, '_blank', 'noopener,noreferrer');
             }}
