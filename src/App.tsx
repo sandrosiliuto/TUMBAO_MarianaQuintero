@@ -208,7 +208,7 @@ export default function App() {
         >
           {/* Sparkles / Lips launcher label */}
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#ff2d78]/15 text-[#ff5e9c] border border-[#ff2d78]/25 mb-4 shadow-lg shadow-rose-950/20">
-            <Sparkles className="w-3.5 h-3.5 text-[#ffb838] animate-spin" /> Mariana Quintero en Chamberí
+            <Sparkles className="w-3.5 h-3.5 text-[#ffb838] animate-spin" /> Mariana Quintero en El Médano, Tenerife
           </div>
 
           <h1 className="font-serif font-black tracking-tight leading-none text-shadow-xl text-4xl sm:text-5xl md:text-6xl text-rose-50 select-none uppercase" id="show-main-title">
@@ -338,7 +338,7 @@ export default function App() {
               id="maps-teaser-link"
             >
               <MapPin className="w-4 h-4 text-[#ff2d78] animate-pulse" id="pin-indicator-icon" />
-              <span className="truncate max-w-[260px] sm:max-w-md">C. del Gral. Álvarez de Castro, 10, Chamberí</span>
+              <span className="truncate max-w-[260px] sm:max-w-md">Av. José Miguel Galván Bello, El Médano</span>
             </a>
           </div>
 
@@ -408,7 +408,7 @@ export default function App() {
             ¿DÓNDE ES EL EVENTO? 📍
           </h3>
           <p className="text-xs text-[#ffb838] font-bold uppercase tracking-widest mt-1">
-            Espacio &quot;Tumba'o&quot; Madrid
+            Tumbao Gastro Bar
           </p>
           
           <div className="bg-rose-950/20 border border-rose-900/40 rounded-2xl p-4 my-5" id="venue-address-box">
@@ -416,7 +416,7 @@ export default function App() {
               {SHOW_DETAILS.address}
             </p>
             <p className="text-[11px] text-rose-400/60 leading-normal max-w-sm mx-auto">
-              Corazón de Chamberí. Fácil acceso desde el metro Canal, Iglesia, o Quevedo. ¡El local tiene el mejor ambiente tropical madrileño!
+              Frente a la playa de El Médano. El local perfecto con la mejor brisa marina, ambientazo tropical y vistas espectaculares. ¡Prepárate para reír y bailar junto al mar!
             </p>
           </div>
 

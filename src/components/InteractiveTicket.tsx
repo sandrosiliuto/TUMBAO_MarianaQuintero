@@ -85,7 +85,7 @@ export default function InteractiveTicket() {
                     setUserName(e.target.value);
                     if (e.target.value.trim()) setError('');
                   }}
-                  placeholder="Ej. Mariana de Chamberí, Marta 'La Tumba'a'..."
+                  placeholder="Ej. Mariana del Médano, Marta 'La Tumba'a'..."
                   className="w-full bg-rose-950/20 text-rose-50 placeholder-rose-700 font-bold border-2 border-rose-900/40 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#ff2d78] focus:ring-1 focus:ring-[#ff2d78]/30 transition-all text-center"
                   id="ticket-name-input"
                 />
