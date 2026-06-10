@@ -253,7 +253,7 @@ export default function App() {
               <p className="text-xs font-extrabold tracking-widest text-rose-400 uppercase">MONÓLOGAZO DE COMEDIA</p>
               
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white mt-1">
-                Con la inigualable
+                Con la carismática
               </h2>
               
               <span className="text-4xl sm:text-5xl md:text-6xl drop-shadow-[0_0_15px_rgba(255,45,120,0.8)] font-serif italic block mt-3 text-[#ff5e9c] hover:scale-[1.03] duration-300 transition-all font-black" id="mariana-big-name">
