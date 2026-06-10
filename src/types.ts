@@ -35,7 +35,10 @@ export const SHOW_DETAILS = {
   address: "C. del Gral. Álvarez de Castro, 10, Chamberí, 28010 Madrid, España",
   mapsLink: "https://maps.app.goo.gl/JiWcN3U73MCXpXYy9",
   whatsappNumber: "+34666667542",
-  whatsappMessage: "¡Hola! 💋 Quisiera reservar o tener información sobre el monólogo 'Mi Mundo Por Dentro' de Mariana Quintero el 19 de Junio.",
+  whatsappMessage: "¡Hola! 💋 Quisiera reservar o tener información sobre el monólogo y la sesión de DJ en 'Mi Mundo Por Dentro' del 19 de Junio.",
+  djName: "Sistah Vibes",
+  djInstagram: "https://www.instagram.com/sistah_vibes?igsh=MWxiczIwZWE3NW9vYQ==",
+  djTime: "22:00 h",
 };
 
 export const INSTAGRAM_PERFORMER = "__marianaquintero__";
@@ -88,6 +91,18 @@ export const SASSY_QUOTES: SassyQuote[] = [
     text: "Mis curvas no son peligrosas, lo peligroso es mi lengua cuando me subo a un escenario con un micrófono y ganas de contarlo todo. 🫦",
     category: "tumbao",
     tag: "Sin Censura"
+  },
+  {
+    id: "q9",
+    text: "Si los tacones te cansan de tanto reír, DJ Sistah Vibes te pondrá el ritmo descalza para bailar con el alma libre a partir de las 22:00. 🎛️🎵",
+    category: "tumbao",
+    tag: "Ritmo Afro-Caribeño"
+  },
+  {
+    id: "q10",
+    text: "Mi música no tiene vergüenza, tiene 'Sistah Vibes'. Prepárate para el mejor atardecer sónico tropical donde movemos caderas y soltamos risas. 🍹🌴",
+    category: "tumbao",
+    tag: "Afrobeat & Dancehall"
   }
 ];
 

@@ -13,7 +13,9 @@ import {
   Volume2,
   VolumeX,
   Footprints,
-  Flame
+  Flame,
+  Disc,
+  Music
 } from 'lucide-react';
 
 import bgImage from './assets/images/tumbao_poster_bg_1781027248329.png';
@@ -22,6 +24,7 @@ import FloatingWorld from './components/FloatingWorld';
 import SparkleTrail from './components/SparkleTrail';
 import InteractiveShowcase from './components/InteractiveShowcase';
 import InteractiveTicket from './components/InteractiveTicket';
+import SistahVibesBooth from './components/SistahVibesBooth';
 
 // Target timestamp (Spain Summer Time CEST: June 19, 2026 at 20:00 CEST -> UTC+2)
 const TARGET_DATE = new Date('2026-06-19T20:00:00+02:00').getTime();
@@ -186,21 +189,33 @@ export default function App() {
           <span className="absolute -bottom-4 -left-3 text-3xl select-none opacity-80 hover:scale-125 transition-transform cursor-pointer animate-bounce" id="corner-lips-bl">🫦</span>
           <span className="absolute -bottom-4 -right-3 text-3xl select-none opacity-80 hover:scale-125 transition-transform cursor-pointer" id="corner-lips-br">💋</span>
 
-          {/* Sassy monologue host name */}
-          <h2 className="text-xl sm:text-2xl font-bold tracking-wide text-rose-100" id="performer-banner">
-            Con la inigualable monologuista <span className="text-[#ff2d78] drop-shadow-[0_0_12px_rgba(255,45,120,0.5)] font-serif italic text-2xl md:text-3xl block mt-1 hover:scale-105 duration-300 transition-transform"><a href={SHOW_DETAILS.instagram} target="_blank" rel="noopener noreferrer">Mariana Quintero</a></span>
-          </h2>
+          {/* Sassy monologue & DJ joint listing */}
+          <div className="space-y-4" id="performer-banner">
+            <div>
+              <p className="text-[10px] font-black tracking-widest text-[#ff2d78] uppercase">A las {SHOW_DETAILS.time} h 🎙️</p>
+              <h2 className="text-xl sm:text-2xl font-bold tracking-wide text-rose-100">
+                Monólogo con la inigualable <span className="text-[#ff5e9c] drop-shadow-[0_0_8px_rgba(255,45,120,0.4)] font-serif italic text-2xl md:text-3xl block mt-0.5 hover:scale-105 duration-300 transition-transform"><a href={SHOW_DETAILS.instagram} target="_blank" rel="noopener noreferrer">Mariana Quintero</a></span>
+              </h2>
+            </div>
+            
+            <div className="pt-2 border-t border-rose-950/40">
+              <p className="text-[10px] font-black tracking-widest text-[#ffb838] uppercase">A las {SHOW_DETAILS.djTime} h 🌴</p>
+              <h2 className="text-lg sm:text-xl font-bold tracking-wide text-rose-100">
+                Afterparty Afro-Tropical con <span className="text-[#ffb838] drop-shadow-[0_0_8px_rgba(255,184,56,0.3)] font-serif italic text-xl md:text-2xl block mt-0.5 hover:scale-105 duration-300 transition-transform"><a href={SHOW_DETAILS.djInstagram} target="_blank" rel="noopener noreferrer">DJ {SHOW_DETAILS.djName}</a></span>
+              </h2>
+            </div>
+          </div>
 
           {/* DATE BADGE IN CABARET CODES */}
-          <div className="my-6 inline-flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 bg-gradient-to-r from-rose-900/40 via-[#ff2d78]/25 to-rose-900/40 border border-[#ff2d78]/40 rounded-3xl py-4 px-6 md:px-8 shadow-inner shadow-rose-950/40 select-none w-full" id="cabaret-date-badge">
+          <div className="my-6 inline-flex flex-col sm:flex-row items-center justify-center gap-3 bg-gradient-to-r from-rose-900/40 via-[#ff2d78]/25 to-rose-900/40 border border-[#ff2d78]/40 rounded-3xl py-4 px-6 md:px-8 shadow-inner shadow-rose-950/40 select-none w-full" id="cabaret-date-badge">
             <div className="flex items-center gap-2 text-rose-100 font-black text-sm md:text-base tracking-widest uppercase">
               <Calendar className="w-5 h-5 text-[#ff2d78] animate-bounce" />
-              <span>{SHOW_DETAILS.date}</span>
+              <span>EL {SHOW_DETAILS.date}</span>
             </div>
             <div className="hidden sm:block text-rose-500/40 font-bold">|</div>
-            <div className="flex items-center gap-2 text-rose-100 font-black text-sm md:text-base tracking-widest uppercase">
+            <div className="flex items-center gap-2 text-rose-100 font-zinc-300 font-extrabold text-xs md:text-sm tracking-wider uppercase">
               <Clock className="w-5 h-5 text-[#ffb838] rotate-12" />
-              <span>A LAS {SHOW_DETAILS.time}</span>
+              <span>DESDE 20:00 HASTA CERRAR</span>
             </div>
           </div>
 
@@ -302,6 +317,9 @@ export default function App() {
 
         {/* 7. INTERACTIVE SECRET SUITCASE SHOWCASE */}
         <InteractiveShowcase />
+
+        {/* 7.5. INTERACTIVE DJ BOOTH WITH SISTAH VIBES */}
+        <SistahVibesBooth />
 
         {/* 8. DETAILED VENUE LOCATION CARD */}
         <motion.section
