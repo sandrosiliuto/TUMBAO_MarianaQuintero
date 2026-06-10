@@ -34,26 +34,18 @@ export default function App() {
   const [copiedText, setCopiedText] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
-  // Background Audio engine - looks for local absolute root /audio.mp3
+  // Background Audio engine - plays "El Tumbao (Radio Edit)"
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Instantiate Audio pointing directly to /audio.mp3
-    const audio = new Audio('/audio.mp3');
+    // Instantiate Audio pointing directly to the official preview of "El Tumbao (Radio Edit)"
+    const audio = new Audio('https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/3e/97/99/3e97997a-272e-fef2-472a-8154eca16196/mzaf_5958775137960673982.plus.aac.ep.m4a');
     audio.loop = true;
     audio.volume = 0.50;
     audioRef.current = audio;
 
-    // Resilient fallback logic when /audio.mp3 doesn't exist yet
     const handleAudioError = () => {
-      console.log("Local audio.mp3 not found or ready yet. Loading tropical sound loop background as fallback...");
-      if (audioRef.current && !audioRef.current.src.includes('soundhelix.com')) {
-        audioRef.current.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3';
-        // If user already pressed play, trigger playback immediately
-        if (!isMuted) {
-          audioRef.current.play().catch(e => console.warn("Fallback play blocked:", e));
-        }
-      }
+      console.log("Error loading the background track 'El Tumbao'.");
     };
 
     audio.addEventListener('error', handleAudioError);
