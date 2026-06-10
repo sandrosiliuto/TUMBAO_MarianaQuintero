@@ -240,19 +240,37 @@ export default function App() {
           <span className="absolute -bottom-4 -right-3 text-3xl select-none opacity-80 hover:scale-125 transition-transform cursor-pointer" id="corner-lips-br">💋</span>
 
           {/* Sassy monologue & DJ joint listing */}
-          <div className="space-y-4" id="performer-banner">
-            <div>
-              <p className="text-[10px] font-black tracking-widest text-[#ff2d78] uppercase">A las {SHOW_DETAILS.time} h 🎙️</p>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-wide text-rose-100">
-                Monólogo con la inigualable <span className="text-[#ff5e9c] drop-shadow-[0_0_8px_rgba(255,45,120,0.4)] font-serif italic text-2xl md:text-3xl block mt-0.5 hover:scale-105 duration-300 transition-transform"><a href={SHOW_DETAILS.instagram} target="_blank" rel="noopener noreferrer">Mariana Quintero</a></span>
+          <div className="space-y-6" id="performer-banner">
+            {/* Spotlight container for Mariana Quintero */}
+            <div className="bg-gradient-to-b from-[#ff2d78]/18 via-[#ff2d78]/5 to-transparent border border-[#ff2d78]/40 rounded-[28px] p-5 sm:p-7 shadow-xl shadow-rose-950/30 relative overflow-hidden" id="mariana-spotlight">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#ff2d78] to-transparent" />
+              
+              {/* Highlight Session badge */}
+              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-black bg-[#ff2d78]/30 text-rose-100 border border-[#ff2d78]/50 shadow-[0_0_15px_rgba(255,45,120,0.5)] uppercase tracking-widest mb-4 hover:scale-105 duration-200 cursor-pointer" id="monologue-time-badge">
+                <span className="animate-pulse text-[#ffb838]">🔴</span> EN VIVO · 20:00h a 22:00h 🎙️
+              </div>
+              
+              <p className="text-xs font-extrabold tracking-widest text-rose-400 uppercase">MONÓLOGAZO DE COMEDIA</p>
+              
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white mt-1">
+                Con la inigualable
               </h2>
+              
+              <span className="text-4xl sm:text-5xl md:text-6xl drop-shadow-[0_0_15px_rgba(255,45,120,0.8)] font-serif italic block mt-3 text-[#ff5e9c] hover:scale-[1.03] duration-300 transition-all font-black" id="mariana-big-name">
+                <a href={SHOW_DETAILS.instagram} target="_blank" rel="noopener noreferrer">
+                  Mariana Quintero
+                </a>
+              </span>
             </div>
             
-            <div className="pt-2 border-t border-rose-950/40">
-              <p className="text-[10px] font-black tracking-widest text-[#ffb838] uppercase">A las {SHOW_DETAILS.djTime} h 🌴</p>
-              <h2 className="text-lg sm:text-xl font-bold tracking-wide text-rose-100">
-                Afterparty Afro-Tropical con <span className="text-[#ffb838] drop-shadow-[0_0_8px_rgba(255,184,56,0.3)] font-serif italic text-xl md:text-2xl block mt-0.5 hover:scale-105 duration-300 transition-transform"><a href={SHOW_DETAILS.djInstagram} target="_blank" rel="noopener noreferrer">DJ {SHOW_DETAILS.djName}</a></span>
-              </h2>
+            {/* Secondary guest session */}
+            <div className="pt-2 animate-fade-in" id="dj-secondary-session">
+              <span className="text-[10px] font-black tracking-widest text-amber-400/80 uppercase bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-full">
+                A PARTIR DE LAS {SHOW_DETAILS.djTime} 🌴
+              </span>
+              <h3 className="text-sm sm:text-base font-bold text-rose-200/80 tracking-wide mt-3">
+                Afterparty Afro-Tropical con o sin tacones por <span className="text-[#ffb838] font-serif italic"><a href={SHOW_DETAILS.djInstagram} className="hover:text-yellow-300 transition-colors underline decoration-amber-500/30" target="_blank" rel="noopener noreferrer">DJ {SHOW_DETAILS.djName}</a></span>
+              </h3>
             </div>
           </div>
 
