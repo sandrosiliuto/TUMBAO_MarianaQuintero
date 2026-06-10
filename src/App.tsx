@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { 
   Calendar, 
@@ -33,6 +33,50 @@ export default function App() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0, finished: false });
   const [copiedText, setCopiedText] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+
+  // Background Audio engine - looks for local absolute root /audio.mp3
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    // Instantiate Audio pointing directly to /audio.mp3
+    const audio = new Audio('/audio.mp3');
+    audio.loop = true;
+    audio.volume = 0.50;
+    audioRef.current = audio;
+
+    // Resilient fallback logic when /audio.mp3 doesn't exist yet
+    const handleAudioError = () => {
+      console.log("Local audio.mp3 not found or ready yet. Loading tropical sound loop background as fallback...");
+      if (audioRef.current && !audioRef.current.src.includes('soundhelix.com')) {
+        audioRef.current.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3';
+        // If user already pressed play, trigger playback immediately
+        if (!isMuted) {
+          audioRef.current.play().catch(e => console.warn("Fallback play blocked:", e));
+        }
+      }
+    };
+
+    audio.addEventListener('error', handleAudioError);
+
+    return () => {
+      audio.pause();
+      audio.removeEventListener('error', handleAudioError);
+      audioRef.current = null;
+    };
+  }, []);
+
+  // Sync state changes from the user interaction
+  useEffect(() => {
+    if (audioRef.current) {
+      if (!isMuted) {
+        audioRef.current.play().catch(e => {
+          console.warn("Audio playback gesture required or blocked:", e);
+        });
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isMuted]);
 
   // Countdown timer logic
   useEffect(() => {
@@ -129,18 +173,24 @@ export default function App() {
       <div className="fixed inset-0 bg-radial-gradient(ellipse at center, transparent 20%, rgba(3,0,2,0.65) 60%, rgba(3,0,2,0.92) 100%) z-0 pointer-events-none" />
       <div className="fixed inset-0 bg-gradient-to-b from-[#030002]/45 via-transparent to-[#030002]/95 z-0 pointer-events-none" />
 
-      {/* Interactive Micro sound synthesized alert */}
+      {/* Interactive Background Music / Audio controller */}
       <div className="fixed top-4 right-4 z-40" id="sound-control-wrapper">
         <button
           onClick={handleMuteToggle}
-          className="p-3 rounded-full bg-black/70 border border-rose-500/30 backdrop-blur-md hover:bg-rose-950/40 text-rose-300 hover:text-[#ff2d78] hover:border-[#ff2d78] active:scale-90 transition-all cursor-pointer shadow-lg shadow-rose-950/20 flex items-center justify-center"
-          title={isMuted ? "Activar besos sonoros de Mariana 💋" : "Silenciar"}
+          className="p-3 rounded-full bg-black/70 border border-rose-500/30 backdrop-blur-md hover:bg-rose-950/40 text-rose-300 hover:text-[#ff2d78] hover:border-[#ff2d78] active:scale-90 transition-all cursor-pointer shadow-lg shadow-rose-950/20 flex items-center justify-center gap-1.5"
+          title={isMuted ? "Escuchar ambiente y música del show 🎵" : "Silenciar música del show 🔇"}
           id="sound-control-btn"
         >
           {isMuted ? (
-            <VolumeX className="w-5 h-5 text-rose-400" />
+            <>
+              <VolumeX className="w-5 h-5 text-rose-400" />
+              <span className="text-[10px] font-black tracking-widest text-rose-300/80 uppercase pad-r-1 hidden sm:inline">PLAY MÚSICA 💋</span>
+            </>
           ) : (
-            <Volume2 className="w-5 h-5 text-[#ff2d78] animate-bounce" />
+            <>
+              <Volume2 className="w-5 h-5 text-[#ff2d78] animate-bounce" />
+              <span className="text-[10px] font-black tracking-widest text-[#ff2d78] uppercase pad-r-1 hidden sm:inline">MÚSICA ON 🌴</span>
+            </>
           )}
         </button>
       </div>
